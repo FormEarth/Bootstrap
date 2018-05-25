@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>信息管理系统-信息录入</title>
+    <link rel="stylesheet" type="text/css" href="lib/index.css">
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="lib/font-awesome-4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+                aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li>
+                    <p class="navbar-text">河南财经政法大学学生信息管理系统</p>
+                </li>
+                <li class="">
+                        <a href="index.html">首页</a>
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">信息维护</a>
+                </li>
+                <li>
+                    <a href="#">公告</a>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">选课
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="#">推荐课表</a>
+                        </li>
+                        <li>
+                            <a href="#">自主选课</a>
+                        </li>
+                        <li>
+                            <a href="#">推荐选课</a>
+                        </li>
+                        <li role="separator" class="divider"></li>
+                        <li>
+                            <a href="#">其它选课</a>
+                        </li>
+                        <li role="separator" class="divider"></li>
+                    </ul>
+                </li>
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <img id="avatar" src="image/avatar.jpg" alt="这是图像">
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">王春阳
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="#">个人信息</a>
+                        </li>
+                        <li>
+                            <a href="#">修改密码</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">退出
+                        <span class="fa fa-sign-out"></span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        </div>
+    </nav>
+    <div class="container-fluid" style="padding-top: 10px">
+        <div class="row">
+            <div class="col-xs-12 col-sm-offset-1 col-sm-10">
+                <form class="form-horizontal" role="form">
+                    <div id="legend" class="">
+                        <legend class="">学生信息维护</legend>
+                    </div>
+                    <div class="form-group">
+                        <label for="name" class="col-sm-1 col-sm-offset-1 control-label">姓名</label>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" id="name" name="name" placeholder="请输入名字">
+                        </div>
+                        <label for="studentID" class="col-sm-1 control-label">学号</label>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" id="studentID" name="name" placeholder="请输入学号">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="sex" class="col-sm-1 col-sm-offset-1 control-label">性别</label>
+                        <div class="col-sm-4">
+                            <label class="radio-inline">
+                                <input type="radio" name="sex" id="sex" value="男" checked> 男
+                            </label>
+                            <label class="radio-inline">
+                                <input type="radio" name="sex" id="sex" value="女"> 女
+                            </label>
+                        </div>
+                        <label for="birthday" class="col-sm-1 control-label">出生日期</label>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" id="birthday" placeholder="请选择出生日期">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="nation" class="col-sm-1 col-sm-offset-1 control-label">民族</label>
+                        <div class="col-sm-4">
+                            <select class="form-control" name="nation" id="nation">
+                                <option>请选择</option>
+                                <option>汉族</option>
+                                <option>回族</option>
+                                <option>壮族</option>
+                            </select>
+                        </div>
+                        <label for="political" class="col-sm-1 control-label">政治面貌</label>
+                        <div class="col-sm-4">
+                            <label class="radio-inline">
+                                <input type="radio" name="political" id="political" value="群众" checked> 群众
+                            </label>
+                            <label class="radio-inline">
+                                <input type="radio" name="political" id="political" value="共青团员"> 共青团员
+                            </label>
+                            <label class="radio-inline">
+                                <input type="radio" name="political" id="political" value="共产党员"> 共产党员
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone" class="col-sm-1 col-sm-offset-1 control-label">电话</label>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" id="phone" name="phone" placeholder="请输入电话">
+                        </div>
+                        <label for="mail" class="col-sm-1 control-label">邮箱</label>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" id="mail" name="phone" placeholder="请输入邮箱">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="address" class="col-sm-1 col-sm-offset-1 control-label">地址</label>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" id="address" name="address" placeholder="请输入地址">
+                        </div>
+                        <label for="class" class="col-sm-1 control-label">班级</label>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" id="class" name="class" placeholder="请输入班级">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="photo" class="col-sm-1 col-sm-offset-1 control-label">照片</label>
+                        <div class="col-sm-4">
+                            <input class="input-file" id="photo" name="photo" type="file">
+                        </div>
+                        <label for="department" class="col-sm-1 control-label">院系</label>
+                        <div class="col-sm-4">
+                            <select class="form-control" name="department" id="department">
+                                <option>请选择</option>
+                                <option>计算机与信息工程学院</option>
+                                <option>数学学院</option>
+                                <option>旅游与会展学院</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="profession" class="col-sm-1 col-sm-offset-1 control-label">专业</label>
+                        <div class="col-sm-4">
+                            <select class="form-control" name="profession" id="profession">
+                                <option>请选择</option>
+                                <option>软件工程</option>
+                                <option>计算机与信息工程</option>
+                                <option>物联网</option>
+                            </select>
+                        </div>
+                        <label for="entranceTime" class="col-sm-1 control-label">入学时间</label>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" id="entranceTime" name="entranceTime" placeholder="请选择入学时间">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                            <label for="come" class="col-sm-1 col-sm-offset-1 control-label">生源地</label>
+                            <div class="col-sm-4">
+                                <select class="form-control" name="come" id="come">
+                                    <option>请选择</option>
+                                    <option>河南省</option>
+                                    <option>安徽省</option>
+                                    <option>山西省</option>
+                                </select>
+                            </div>
+                            <label for="idNumber" class="col-sm-1 control-label">身份证号</label>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" id="idNumber" name="idNumber" placeholder="输入身份证号">
+                            </div>
+                        </div>
+                    <div class="form-group">
+                        <div class="col-sm-offset-4 col-sm-4">
+                            <button type="submit" class="btn btn-primary btn-block">提交</button>
+                        </div>
+                    </div>
+
+                </form>
+
+
+            </div>
+        </div>
+        <div class="footer">
+            ©河南财经政法大学 &nbsp;&nbsp; 计算机与信息工程学院
+        </div>
+    </div>
+
+    <script src="lib/jquery/jquery.js"></script>
+    <script src="lib/bootstrap/js/bootstrap.js"></script>
+    <script src="lib/bootstrap/js/canvas-nest.min.js"></script>
+    <script src="lib/laydate/laydate.js"></script>
+    <script>
+        lay('#version').html('-v' + laydate.v);
+        //执行一个laydate实例
+        laydate.render({
+            elem: '#birthday'//指定元素           
+        });
+        laydate.render({
+            elem: '#entranceTime'
+        });
+    </script>
+</body>
+
+</html>

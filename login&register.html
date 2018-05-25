@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Login&Register</title>
+    <link rel="stylesheet" type="text/css" href="lib/login.css">
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="lib/font-awesome-4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <nav>
+        <!-- <div class="navbar-header">
+            <img id="brand" alt="Brand" src="image/xiaohui.jpg">
+        </div> -->
+
+        <p id="title">河南财经政法大学学生信息管理系统</p>
+    </nav>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="row-left col-sm-12 col-sm-7">
+               
+            </div>
+
+            <div class="row-right col-sm-offset-1 col-sm-3">
+                <div class="login-title">
+                    <span>
+                        <font id="login">用户登陆</font>
+                        <font>&nbsp;|&nbsp;</font>
+                        <font id="register">用户注册</font>
+                    </span>
+                </div>
+                <div class="login-div">
+                    <form id="login-form">
+                        <div class="input-group">
+                            <span class="input-group-addon" id="basic-addon1">
+                                <i class="fa fa-user"></i>
+                            </span>
+                            <input type="text" class="form-control" id="account" placeholder="账号" aria-describedby="basic-addon1" maxlength="20">
+                        </div>
+                        <div class="input-group">
+                            <span class="input-group-addon" id="basic-addon2">
+                                <i class="fa fa-lock"></i>
+                            </span>
+                            <input type="password" class="form-control" id="password" placeholder="密码" aria-describedby="basic-addon2" maxlength="10">
+                        </div>
+                        <!-- <div class="input-group">
+                            <label class="radio-inline">
+                                <input type="radio" name="type" id="type" value="学生" checked> 学生
+                            </label>
+                            <label class="radio-inline">
+                                <input type="radio" name="type" id="type" value="老师"> 老师
+                            </label>
+                        </div> -->
+                        <div class="input-group">
+                            <button type="button" class="btn btn-default" id="btnLogin">提交</button>
+                        </div>
+                        <div style="text-align: right;">
+                            <a>忘记密码?</a>
+                        </div>
+                    </form>
+                </div>
+                <div class="register-div" style="display:none;">
+                    <form id="register-form">
+                        <div class="input-group">
+                            <span class="input-group-addon" id="basic-addon1">
+                                <i class="fa fa-user"></i>
+                            </span>
+                            <input type="text" class="form-control" id="raccount" name="raccount" placeholder="账号" aria-describedby="basic-addon1" maxlength="20">
+                        </div>
+                        <div class="input-group">
+                            <span class="input-group-addon" id="basic-addon2">
+                                <i class="fa fa-lock"></i>
+                            </span>
+                            <input type="password" class="form-control" id="rpassword" name="rpassword" placeholder="密码" aria-describedby="basic-addon2"
+                                maxlength="10">
+                        </div>
+                        <div class="input-group">
+                            <span class="input-group-addon" id="basic-addon2">
+                                <i class="fa fa-lock"></i>
+                            </span>
+                            <input type="password" class="form-control" id="rrepassword" name="rrepassword" placeholder="确认密码" aria-describedby="basic-addon2"
+                                maxlength="10">
+                        </div>
+                        <!-- <div class="input-group">
+                            <label class="radio-inline">
+                                <input type="radio" name="type" id="type" value="学生" checked> 学生
+                            </label>
+                            <label class="radio-inline">
+                                <input type="radio" name="type" id="type" value="老师"> 老师
+                            </label>
+                        </div> -->
+                        <div class="input-group">
+                            <button type="button" class="btn btn-default" id="btnRegister">提交</button>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+
+        </div>
+       
+    </div>
+ <div class=" footer ">
+            ©河南财经政法大学 &nbsp;&nbsp; 计算机与信息工程学院
+ </div>
+
+    <script src="lib/jquery/jquery.js "></script>
+    <script src="lib/bootstrap/js/bootstrap.js "></script>
+    <script src="lib/bootstrap/js/canvas-nest.min.js "></script>
+    <script src="lib/jquery/jquery.min.js "></script>
+    <script src="lib/layer/layer.js "></script>
+
+    <script type="text/javascript ">
+        //登陆注册切换
+        //属性里不要有空格，否则会导致函数无法正常调用，VS code格式化代码会自动添加空格
+        $(document).ready(function () {
+            $("#login").click(function () {
+                $(".register-div").css("display", "none");
+                $(".login-div").css("display", "block");
+                $("#register").css("color", "white");
+                $("#login").css("color", "black");
+            });
+            $("#register").click(function () {
+                $(".register-div").css("display", "block");
+                $(".login-div").css("display", "none");
+                $("#login").css("color", "white");
+                $("#register").css("color", "black");
+            });
+        }); 
+
+        // 登陆数据验证
+        $('#btnLogin').on('click', function (event) {
+            //阻止submit的默认事件
+            event.preventDefault();
+
+            if ($('#account').val().trim().length < 1) {
+                //tips层-右
+                layer.tips('请填写您的账号！', '#account', { tips: [2, '#3675c9'] });
+                $('#account').focus();
+                return;
+            }
+
+            if ($('#password').val().trim().length < 1) {
+                layer.tips('请填写你的密码！', '#password', { tips: [2, '#3675c9'] });
+                $('#password').focus();
+                return;
+            }
+
+            $.post(" ", $('form').serialize(), function (res) {
+                if (res.code == 200) {
+                    setTimeout(function () {
+                        location.href = '<c:url value="/list " />';
+                    }, 2000);
+                    layer.msg('登录成功，正在跳转首页...')
+                }
+                else {
+                    layer.msg(res.message);
+                }
+            })
+        });
+
+        //注册数据验证
+        $('#btnRegister').on('click', function (event) {
+            //阻止submit的默认事件
+            event.preventDefault();
+
+            if ($('#raccount').val().trim().length < 1) {
+                layer.tips('请填写你账号！', '#raccount', { tips: [2, '#3675c9'] });
+                $('#raccount').focus();
+                return;
+            }
+
+            if ($('#rpassword').val().trim().length < 1) {
+                layer.tips('请填写你的密码！', '#rpassword', { tips: [2, '#3675c9'] });
+                $('#rpassword').focus();
+                return;
+            }
+
+            if ($('#rrepassword').val().trim().length < 1) {
+                layer.tips('请填写你的密码！', '#rrepassword', { tips: [2, '#3675c9'] });
+                $('#rrepassword').focus();
+                return;
+            }
+
+            if ($('#rpassword').val().trim()!=$('#rrepassword').val().trim()) {
+                layer.tips('两次输入的密码不一致！', '#rrepassword', { tips: [2, '#3675c9'] });
+                $('#rrepassword').val("").focus();
+                return;
+            }
+
+            $.post("", $('#register-form').serialize(), function (res) {
+                if (res.code == 200) {
+                    setTimeout(function () {
+                        location.href = '<c:url value="/list" />';
+                    }, 2000);
+                    layer.msg('登录成功，正在跳转首页...')
+                }
+                else {
+                    layer.msg(res.message);
+                }
+            })
+        });
+    </script>
+
+</body>
+
+</html>
