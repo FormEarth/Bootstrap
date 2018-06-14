@@ -1,158 +1,121 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="zh-CN">
 
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>信息管理系统-首页</title>
-  <link rel="stylesheet" type="text/css" href="lib/index.css">
-  <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css">
-  <link rel="stylesheet" href="lib/font-awesome-4.7.0/css/font-awesome.min.css">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>信息管理系统</title>
+    <link rel="stylesheet" type="text/css" href="lib/login.css" />
+    <link rel="stylesheet" href="lib/bootstrap-3.3.7-dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="lib/font-awesome-4.7.0/css/font-awesome.min.css" />
 </head>
 
 <body>
-  <nav class="navbar navbar-default navbar-fixed-top">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
-        aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
+    <nav>
+        <!-- <div class="navbar-header">
+            <img id="brand" alt="Brand" src="image/xiaohui.jpg">
+        </div> -->
 
-    </div>
+        <p id="title">河南财经政法大学学生信息管理系统</p>
+    </nav>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="row-left col-sm-7">
 
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li>
-          <p class="navbar-text">河南财经政法大学学生信息管理系统</p>
-        </li>
-        <li class="">
-            <a href="index.html">首页</a>
-            <span class="sr-only">(current)</span>
-          </a>
-        </li>
-        <li>
-          <a href="info.html">信息维护</a>
-        </li>
-        <li>
-          <a href="#">公告</a>
-        </li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">选课
-            <span class="caret"></span>
-          </a>
-          <ul class="dropdown-menu">
-            <li>
-              <a href="#">推荐课表</a>
-            </li>
-            <li>
-              <a href="#">自主选课</a>
-            </li>
-            <li>
-              <a href="#">推荐选课</a>
-            </li>
-            <li role="separator" class="divider"></li>
-            <li>
-              <a href="#">其它选课</a>
-            </li>
-            <li role="separator" class="divider"></li>
-          </ul>
-        </li>
-      </ul>
 
-      <ul class="nav navbar-nav navbar-right">
-        <li>
-          <img id="avatar" src="image/avatar.jpg" alt="这是图像">
-        </li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">王春阳
-            <span class="caret"></span>
-          </a>
-          <ul class="dropdown-menu">
-            <li>
-              <a href="info-detail.html">个人信息</a>
-            </li>
-            <li>
-              <a href="password.html">修改密码</a>
-            </li>
-          </ul>
-        </li>
-        <li>
-          <a href="#">退出
-            <span class="fa fa-sign-out"></span>
-          </a>
-        </li>
-      </ul>
-    </div>
-    <!-- /.navbar-collapse -->
-    </div>
-    <!-- /.container-fluid -->
-  </nav>
-
-  <!-- <style>
-.container{
-  background:url(3.jpg) repeat;
-  background-size: 100% auto;
-  height:400px;
-  }
-</style> -->
-
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-xs-12 col-sm-2 col-sm-offset-1">
-        <div class="panel panel-primary">
-          <!-- Default panel contents -->
-          <div class="panel-heading">功能列表</div>
-          <!-- <div class="panel-body">
-            <p>...</p>
-          </div> -->
-          <!-- List group -->
-          <div class="list-group">
-            <button type="button" class="list-group-item" onclick="window.open('info-detail.html','_self')">个人信息>></button>
-            <button type="button" class="list-group-item"><a href="info-detail.html">在线选课>></a></button>
-            <button type="button" class="list-group-item"><a href="info-detail.html">成绩查询>></a></button>
-            <button type="button" class="list-group-item"><a href="info-detail.html">查看公告>></a></button>
-            <button type="button" class="list-group-item"><a href="info-detail.html">意见反馈>></a></button>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-xs-12 col-sm-7">
-
-        <!-- 公告 -->
-        <div class="panel panel-primary">
-          <div class="panel-heading">最新公告</div>
-          <div class="list-group">
-            <button type="button" class="list-group-item">2018-4-14 【公告】关于2017-2018 学年第一学期重修、补修选课...</button>
-            <button type="button" class="list-group-item">2018-4-14 【公告】关于2017-2018 学年第二学期重修、补修选课...</button>
-            <button type="button" class="list-group-item">2018-4-14 【公告】关于2017-2018 学年第三学期重修、补修选课...</button>
-          </div>
-        </div>
-        <!-- 课程信息 -->
-        <div class="panel panel-info">
-          <!-- Default panel contents -->
-          <div class="panel-heading">课程信息</div>
-          <!-- List-Group -->
-          <div class="list-group">
-              <button type="button" class="list-group-item">公告</button>
-              <button type="button" class="list-group-item">公告</button>
-              <button type="button" class="list-group-item">公告</button>
             </div>
+
+            <div class="row-right col-sm-offset-1 col-sm-3">
+                <div class="login-title">
+                    <span>
+                        <font id="login">用户登陆</font>
+                        <font>|</font>
+                        <font id="register">用户注册</font>
+                    </span>
+                </div>
+                <div class="login-div">
+                    <form id="login-form">
+
+                        <div class="input-group">
+                            <span class="input-group-addon">账号</span>
+                            <input type="text" class="form-control" id="account" value="123" placeholder="请输入您的账号" />
+                        </div>
+
+                        <div class="input-group">
+                            <span class="input-group-addon">密码</span>
+                            <input type="password" class="form-control" id="password" value="123" placeholder="请输入您的密码" />
+                        </div>
+                        <div class="input-group">
+                            <label class="radio-inline">
+                                <input type="radio" name="type" id="type" value="学生" checked="checked" /> 学生
+                            </label>
+                            <label class="radio-inline">
+                                <input type="radio" name="type" id="type" value="老师" /> 老师
+                            </label>
+                        </div>
+                        <div class="input-group" style="width: 100%">
+                            <button type="button" class="btn btn-primary btn-block" id="btnLogin">登陆</button>
+                        </div>
+                        <div style="text-align: right;">
+                            <a href="homepage.html">首页</a>
+                            <a href="#">忘记密码?</a>
+                        </div>
+                    </form>
+                </div>
+                <div class="register-div" style="display:none;">
+                    <form id="register-form">
+                        <div class="input-group">
+                            <span class="input-group-addon" id="basic-addon1">
+                                <i class="fa fa-envelope-o fa-fw"></i>
+                            </span>
+                            <input type="text" class="form-control" id="raccount" name="raccount" placeholder="邮箱" aria-describedby="basic-addon1" maxlength="20"
+                            />
+                        </div>
+                        <div class="input-group">
+                            <span class="input-group-addon" id="basic-addon2">
+                                <i class="fa fa-key fa-fw"></i>
+                            </span>
+                            <input type="password" class="form-control" id="rpassword" name="rpassword" placeholder="密码，不小于6位" aria-describedby="basic-addon2"
+                                maxlength="10" />
+                        </div>
+                        <div class="input-group">
+                            <span class="input-group-addon" id="basic-addon2">
+                                <i class="fa fa-key fa-fw"></i>
+                            </span>
+                            <input type="password" class="form-control" id="rrepassword" name="rrepassword" placeholder="确认密码" aria-describedby="basic-addon2"
+                                maxlength="10" />
+                        </div>
+
+                        <div class="input-group" style="width: 100%">
+                            <button type="button" class="btn btn-primary btn-block" id="btnRegister">提交</button>
+                        </div>
+                        <div style="text-align: right;">
+                            <label class="checkbox-inline">
+                                <input type="checkbox" id="inlineCheckbox" value="option1" checked="checked"> 接受
+                            </label>
+                            <a onclick="agreement()">用户协议</a>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+
         </div>
-      </div>
 
     </div>
-    <div class="footer">
-      ©河南财经政法大学 &nbsp;&nbsp; 计算机与信息工程学院
+    <div class=" footer ">
+        河南财经政法大学©计算机与信息工程学院
     </div>
-  </div>
 
-  <script src="lib/jquery/jquery.js"></script>
-  <script src="lib/bootstrap/js/bootstrap.js"></script>
-  <script src="lib/bootstrap/js/canvas-nest.min.js"></script>
+    <script src="lib/jquery/jquery.js "></script>
+    <script src="lib/bootstrap-3.3.7-dist/js/bootstrap.js "></script>
+    <script src="lib/jquery/jquery.min.js "></script>
+    <script src="lib/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <script src="lib/layer/layer.js "></script>
+    <script src="lib/js/index.js "></script>
+
+
 </body>
 
 </html>
